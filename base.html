@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Forgery Detector{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ScrollReveal.js -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  PaperTrail
+</span>
+    </div>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a>
+      <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">About</a>
+      <a href="{{ url_for('detect') }}" class="{% if request.endpoint == 'detect' %}active{% endif %}">Detect</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- 🌙 Theme Toggle Button at Bottom Right -->
+  <button id="mode-toggle" title="Toggle Theme">
+    <span id="mode-icon">🌙</span>
+  </button>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const btn = document.getElementById('mode-toggle');
+    const icon = document.getElementById('mode-icon');
+    const theme = localStorage.getItem('theme');
+    if (theme === 'light') {
+      document.body.classList.add('light-mode');
+      icon.textContent = '☀️';
+    }
+
+    btn.onclick = () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      icon.textContent = isLight ? '☀️' : '🌙';
+    };
+  </script>
+
+  <!-- ScrollReveal Animations -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    ScrollReveal().reveal('.fade-card', {
+      origin: 'bottom',
+      distance: '40px',
+      duration: 800,
+      delay: 200,
+      easing: 'ease-in-out',
+      interval: 200,
+      reset: false
+    });
+
+    ScrollReveal().reveal('.sr-fade', {
+      origin: 'bottom',
+      distance: '30px',
+      duration: 700,
+      delay: 100,
+      easing: 'ease-out',
+      reset: false
+    });
+  });
+
+   ScrollReveal().reveal('.about-step', {
+    origin: 'bottom',
+    distance: '50px',
+    duration: 800,
+    delay: 100,
+    interval: 200
+  });
+</script>
+
+
+</body>
+</html>

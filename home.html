@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Home - Forgery Detector{% endblock %}
+
+{% block content %}
+<section class="section-dark">
+  <h1 class="sr-fade">Welcome to the Document Forgery Detector</h1>
+<p class="sr-fade">Detect tampered documents with our AI-powered engine.</p>
+
+  <div class="card-container">
+  <div class="fade-card sr-fade">
+    <h2><i class="fas fa-upload"></i> Upload</h2>
+    <p>Upload scanned documents—certificates, ID cards, or forms—for seamless and secure analysis</p>
+  </div>
+
+  <div class="fade-card sr-fade">
+    <h2><i class="fas fa-search"></i> Analyze</h2>
+    <p>Uses AI to detect font tampering, signature manipulation, and layout inconsistencies through advanced image processing.</p>
+  </div>
+
+  <div class="fade-card sr-fade">
+    <h2><i class="fas fa-file-alt"></i> Result</h2>
+    <p>Get a clear, annotated report with visual highlights and AI-driven insights that identify potential forgeries accurately.</p>
+  </div>
+</div>
+
+  <a href="{{ url_for('detect') }}">
+    <button class="sr-fade">Start Detection</button>
+  </a>
+</section>
+
+<div class="wave-separator">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path d="M0,0 C600,100 600,20 1200,0 L1200,120 L0,120 Z"></path>
+  </svg>
+</div>
+{% endblock %}
