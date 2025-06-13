@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Forgery Detection</title>
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Document Forgery Detection</h1>
+        <div class="upload-section">
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <button id="uploadBtn">Upload Document</button>
+            <div id="preview" class="preview-container"></div>
+        </div>
+        <div id="results" class="results-container" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div class="result-item">
+                <span class="label">Forgery Detection:</span>
+                <span id="forgeryResult"></span>
+                <span id="forgeryConfidence"></span>
+            </div>
+            <div class="result-item">
+                <span class="label">Document Type:</span>
+                <span id="documentType"></span>
+                <span id="documentConfidence"></span>
+            </div>
+            <div class="scorecam-container">
+                <h3>ScoreCAM Visualization</h3>
+                <img id="scorecamImage" alt="ScoreCAM visualization">
+            </div>
+        </div>
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing document...</p>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html> 
