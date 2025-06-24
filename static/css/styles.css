@@ -468,7 +468,7 @@ body.light-mode .document-image.highlighted {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 2rem 0 1rem 0; /* ⬅ Bottom margin reduced */
 }
 
 .fade-card {
@@ -521,6 +521,8 @@ body.light-mode .section-light {
   overflow: hidden;
   line-height: 0;
   position: relative;
+  margin-top: 0;     /* ⬅ Eliminates top gap */
+  padding-top: 0;    /* ⬅ Extra safeguard */
 }
 
 .wave-separator svg {
@@ -960,4 +962,14 @@ section h1, section p {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.footer-bar {
+  text-align: center;
+  font-size: 0.95rem;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  z-index: 5;
+}
+
 
