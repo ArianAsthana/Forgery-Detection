@@ -4,28 +4,32 @@
 {% block content %}
 <section class="section-dark">
   <h1 class="sr-fade">Welcome to the Document Forgery Detector</h1>
-<p class="sr-fade">Detect tampered documents with our AI-powered engine.</p>
+  <p class="sr-fade">Detect tampered documents with our AI-powered engine.</p>
 
   <div class="card-container">
-  <div class="fade-card sr-fade">
-    <h2><i class="fas fa-upload"></i> Upload</h2>
-    <p>Upload scanned documents—certificates, ID cards, or forms—for seamless and secure analysis</p>
+    <div class="fade-card sr-fade">
+      <h2><i class="fas fa-upload"></i> Upload</h2>
+      <p>Upload scanned documents—certificates, ID cards, or forms—for seamless and secure analysis</p>
+    </div>
+
+    <div class="fade-card sr-fade">
+      <h2><i class="fas fa-search"></i> Analyze</h2>
+      <p>Uses AI to detect font tampering, signature manipulation, and layout inconsistencies through advanced image processing.</p>
+    </div>
+
+    <div class="fade-card sr-fade">
+      <h2><i class="fas fa-file-alt"></i> Result</h2>
+      <p>Get a clear, annotated report with visual highlights and AI-driven insights that identify potential forgeries accurately.</p>
+    </div>
   </div>
 
-  <div class="fade-card sr-fade">
-    <h2><i class="fas fa-search"></i> Analyze</h2>
-    <p>Uses AI to detect font tampering, signature manipulation, and layout inconsistencies through advanced image processing.</p>
+  <div style="margin: 4.5rem 0;">
+    <a href="/detect" style="text-decoration: none;">
+      <button style="padding: 12px 25px; background-color: #1abc9c; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1rem;">
+        Start Detection
+      </button>
+    </a>
   </div>
-
-  <div class="fade-card sr-fade">
-    <h2><i class="fas fa-file-alt"></i> Result</h2>
-    <p>Get a clear, annotated report with visual highlights and AI-driven insights that identify potential forgeries accurately.</p>
-  </div>
-</div>
-
-  <a href="/detect">
-    <button class="sr-fade">Start Detection</button>
-  </a>
 </section>
 
 <div class="wave-separator">
