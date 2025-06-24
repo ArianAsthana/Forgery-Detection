@@ -18,15 +18,17 @@ body {
 /* Navbar Styles */
 .navbar {
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
 }
 
 .nav-left {
@@ -47,11 +49,21 @@ body {
   margin-right: 10px;
 }
 
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+
 .nav-links a {
   color: var(--text-color);
   text-decoration: none;
-  margin-left: 2rem;
+  padding: 0.5rem;
   transition: color 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .nav-links a:hover {
@@ -164,20 +176,28 @@ main {
 /* Theme Toggle Button */
 #mode-toggle {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--card-background);
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #2c2f33;
   border: none;
-  border-radius: 50%;
   width: 50px;
   height: 50px;
+  font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  color: #ddd;
+  border-radius: 50%;
   z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 #mode-toggle:hover {
+  background-color: #1abc9c;
+  color: white;
   transform: scale(1.1);
 }
 
@@ -378,14 +398,19 @@ p, ul {
   right: 1.5rem;
   background: #2c2f33;
   border: none;
-  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
   cursor: pointer;
   color: #ddd;
-  padding: 12px;
   border-radius: 50%;
   z-index: 1000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 #mode-toggle:hover {
@@ -521,8 +546,8 @@ body.light-mode .section-light {
   overflow: hidden;
   line-height: 0;
   position: relative;
-  margin-top: 0;     /* ⬅ Eliminates top gap */
-  padding-top: 0;    /* ⬅ Extra safeguard */
+  margin-top: -20px;  /* ✅ pulls it up */
+  padding-top: 0;
 }
 
 .wave-separator svg {
@@ -554,19 +579,27 @@ body.light-mode .wave-separator path {
 
 /* === Responsive Layout Fixes === */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 0.5rem;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-right: 0;
+    gap: 2rem;
+  }
+  
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
   .fade-card {
     width: 100%;
     margin-bottom: 2rem;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 }
 
