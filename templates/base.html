@@ -15,10 +15,10 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-left">
-      <span class="logo">
-        <img src="/static/images/logo.png" alt="Logo" class="logo-img">
-        PaperTrail
-      </span>
+      <a href="/" style="display: flex; align-items: center; text-decoration: none; gap: 15px;">
+        <img src="/static/images/logo.png" alt="PaperTrail" style="height: 40px; width: auto;">
+        <span style="color: white; font-size: 24px; font-weight: bold;">PaperTrail</span>
+      </a>
     </div>
     <div class="nav-links">
       <a href="/" class="{% if request.url.path == '/' %}active{% endif %}">Home</a>
